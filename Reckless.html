@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Reckless</title>
+</head>
+
+<body>
+
+  <header>
+    <img src="4.png" alt="Your Image" class="header-image1">
+    <img src="4.png" alt="Your Image" class="header-image9">
+    <img src="4.png" alt="Your Image" class="header-image10">
+    <img src="4.png" alt="Your Image" class="header-image11">
+    <img src="4.png" alt="Your Image" class="header-image12">
+    <img src="4.png" alt="Your Image" class="header-image13">
+    <img src="4.png" alt="Your Image" class="header-image14">
+    <img src="4.png" alt="Your Image" class="header-image15">
+    <img src="4.png" alt="Your Image" class="header-image16">
+
+    <style>
+      .yellow-bold {
+          color: rgb(255, 136, 0);
+          font-weight: bold;
+          font-size: 1.2em; /* Adjust the font size as needed */
+          text-shadow: -2px -2px 0 rgb(238, 255, 0),  
+                        1px -1px 0 white,
+                       -1px 1px 0 white,
+                        1px 1px 0 white; /* Creates a white outline */
+      }
+  </style>
+  
+  <ul>
+      <li><a href="#" class="yellow-bold">Buy Tickets</a></li>
+      <li><a href="#" class="yellow-bold">Home</a></li>
+      <li><a href="#" class="yellow-bold">Gallery</a></li>
+      <li><a href="#" class="yellow-bold">Contact us</a></li>
+  </ul>
+  
+  
+  </header>
+
+  
+  <div class="books-fall">
+    <div class="books">
+      <div><img src="nte.png"></div>
+    </div>
+  </div>
+
+  <section>
+    <img src="">
+  </section>
+
+  <img src="reckless.jpeg" alt="Description of the image" class="bigger-image">
+  <img src="flower.png" alt="Description of the another image" class="yet-another-image">
+  <img src="flower.png" alt="Description of the another image" class="flower-2">
+  <img src="movie.png" class="overlay-image" alt="Overlay Image">
+  <img src="tv.gif" alt="Description of the GIF" class="tv-gif">
+  <img src="rec.gif" alt="Description of the GIF" class="rec-gif">
+</div>
+  <video autoplay muted loop class="centered-video">
+    <source src="vid.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <img src="23.png" alt="Description of the another image" class="another-image">
+  <div class="image-container">
+    <img src="poster.jpeg" alt="Poster Image" class="adjustable-image">
+</div>
+
+<div> 
+   <img src="nte.png" alt ="note" class = "notes">
+</div>
+<div> 
+  <img src="nte.png" alt ="note" class = "notes-2">
+</div>
+
+<div>
+  <img src = "img.png" alt = "img"  class = "img" >
+</div>
+
+<div>
+  <img src = "line.png" alt = "img-line"  class = "img-line" >
+</div>
+
+
+
+  <!-- Countdown banner -->
+<div class="countdown-banner">
+  <div class="countdown-box">
+    <span id="days">00</span>
+    <span>Days</span>
+  </div>
+  <div class="countdown-box">
+    <span id="hours">00</span>
+    <span>Hours</span>
+  </div>
+  <div class="countdown-box">
+    <span id="minutes">00</span>
+    <span>Minutes</span>
+  </div>
+  <div class="countdown-box">
+    <span id="seconds">00</span>
+    <span>Seconds</span>
+  </div>
+</div>
+
+<div class="video-wrapper">
+  <a href="https://youtu.be/ughDL_ewLbY?si=L73mUIVOqpArpqEd" target="_blank">
+    <img src="you.png" alt="YouTube Icon" width="100" height="100">
+  </a>
+</div>
+
+
+
+  
+
+  <!-- JavaScript for countdown functionality -->
+  <script>
+
+  document.addEventListener("DOMContentLoaded", function() {
+  // Set the countdown date
+  var countdownDate = new Date("June 15, 2024 00:00:00").getTime();
+
+  // Update the countdown every second
+  var countdownInterval = setInterval(function() {
+    var now = new Date().getTime();
+    var distance = countdownDate - now;
+
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Display the countdown in the boxes
+    document.getElementById("days").innerText = days < 10 ? "0" + days : days;
+    document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+    document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+    document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+
+    if (distance < 0) {
+      clearInterval(countdownInterval);
+      document.getElementById("countdown").innerText = "EXPIRED";
+    }
+  }, 1000);
+
+  window.addEventListener('scroll', function() {
+    var body = document.body;
+    var scrollPosition = window.scrollY;
+    var windowHeight = window.innerHeight;
+    var documentHeight = document.body.scrollHeight;
+
+    // Calculate the distance from the bottom of the page
+    var bottomDistance = documentHeight - (scrollPosition + windowHeight);
+
+    // If the bottom distance is less than a certain threshold (e.g., 200 pixels), add the scrolled-white class
+    if (bottomDistance < 200) {
+        body.classList.add('scrolled-white');
+    } else {
+        body.classList.remove('scrolled-white');
+    }
+});
+
+// Get the pathname of the current URL
+var pathname = window.location.pathname;
+
+// Check if the pathname corresponds to the third page
+if (pathname === "/path/to/your/third/page") {
+    // Add a class to the body indicating that it's the third page
+    document.body.classList.add("third-page");
+}
+
+});
+
+  </script>
+  
+</body>
+
+</html>
